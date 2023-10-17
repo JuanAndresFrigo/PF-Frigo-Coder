@@ -1,0 +1,4 @@
+<button mat-raised-button [color]="buttonColor" [disabled]="buttonDisabled" (click)="onButtonClick.emit()">
+    <mat-icon *ngIf="buttonIcon">{{buttonIcon}}</mat-icon>
+    {{ buttonContent }}
+</button>

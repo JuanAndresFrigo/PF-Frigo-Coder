@@ -1,4 +1,12 @@
 <div class="container pt-3">
   <h1>Alumnos</h1>
-  <app-table [dataSourceTable]="userList" [displayedColumnsTable]="userColumns"></app-table>
+
+  <div class="mb-3">
+    <app-button (onButtonClick)="openUsersDialog()" buttonContent="Nuevo Usuario" buttonIcon="add"></app-button>
+  </div>
+
+  <app-table
+    [dataSourceTable]="userList"
+    [displayedColumnsTable]="userColumns"
+  ></app-table>
 </div>

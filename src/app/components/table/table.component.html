@@ -9,7 +9,7 @@
 
   <!-- Fullname Column -->
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+    <th mat-header-cell *matHeaderCellDef appUppercaseDirective>Nombre</th>
     <td mat-cell *matCellDef="let element">
       {{ element | fullname | titlecase }}
     </td>

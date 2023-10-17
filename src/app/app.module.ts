@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainModule } from './modules/main/main.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { MainModule } from './modules/main/main.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MainModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/services/user.service';
+import { UserDialogComponent } from './user-dialog/user-dialog.component';
 
 @Component({
   selector: 'app-users',
@@ -19,7 +21,7 @@ export class UsersComponent {
     'actions',
   ];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private matDialog: MatDialog) {
     this.getUsers();
   }
 
@@ -28,5 +30,15 @@ export class UsersComponent {
       .getUsers()
       .pipe(take(1))
       .subscribe((users: User[]) => (this.userList = users));
+  }
+
+  public openUsersDialog(){   
+    this.matDialog
+      .open(UserDialogComponent)
+      .afterClosed()
+      .subscribe({
+        next: () => {
+        },
+      });
   }
 }
