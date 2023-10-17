@@ -7,10 +7,10 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
-  @ViewChild('drawer') drawer!: MatSidenav;
+  @ViewChild('drawer') drawer?: MatSidenav;
   showFiller = false;
 
   @Input() public set toggleSidenav(showSidenav: boolean) {
-    showSidenav ? this.drawer.open() : this.drawer.close();
+    if(this.drawer)  showSidenav ? this.drawer.open() : this.drawer.close();
   }
 }
