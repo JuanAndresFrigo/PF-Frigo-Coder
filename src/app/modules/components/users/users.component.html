@@ -2,11 +2,16 @@
   <h1>Alumnos</h1>
 
   <div class="mb-3">
-    <app-button (onButtonClick)="openUsersDialog()" buttonContent="Nuevo Usuario" buttonIcon="add"></app-button>
+    <app-button
+      (onButtonClick)="openUsersDialog()"
+      buttonContent="Nuevo Usuario"
+      buttonIcon="add"
+    ></app-button>
   </div>
-
   <app-table
     [dataSourceTable]="userList"
     [displayedColumnsTable]="userColumns"
+    (onEditClick)="onEditUserClick($event)"
+    (onDeleteClick)="onDeleteUserClick($event)"
   ></app-table>
 </div>

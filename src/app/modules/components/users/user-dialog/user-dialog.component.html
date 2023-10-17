@@ -10,7 +10,7 @@
           <mat-label>Nombre</mat-label>
           <input formControlName="name" matInput />
           <mat-error>
-            {{ userForm.get("name")?.errors | formErrors}}
+            {{ userForm.get("name")?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -19,7 +19,7 @@
           <mat-label>Apellido</mat-label>
           <input formControlName="surname" matInput />
           <mat-error>
-            {{ userForm.get("surname")?.errors | formErrors}}
+            {{ userForm.get("surname")?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -28,7 +28,7 @@
           <mat-label>N° Documento</mat-label>
           <input formControlName="docNumber" matInput />
           <mat-error>
-            {{ userForm.get("docNumber")?.errors | formErrors}}
+            {{ userForm.get("docNumber")?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -37,7 +37,7 @@
           <mat-label>Email</mat-label>
           <input formControlName="email" matInput />
           <mat-error>
-            {{ userForm.get("email")?.errors | formErrors}}
+            {{ userForm.get("email")?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
@@ -46,17 +46,17 @@
 </div>
 
 <div mat-dialog-actions>
-  <app-button
-    mat-dialog-close
-    (onButtonClick)="onCancelClick()"
-    buttonColor="accent"
-    buttonContent="Cancelar"
-  ></app-button>
+  <div class="mx-3">
+    <app-button
+      mat-dialog-close
+      (onButtonClick)="onCancelClick()"
+      buttonColor="accent"
+      buttonContent="Cancelar"
+    ></app-button>
+  </div>
   <app-button
     (onButtonClick)="onSaveClick()"
     buttonContent="Guardar"
     [buttonDisabled]="userForm.invalid"
   ></app-button>
-  <!-- <button mat-dialog-close mat-button>Cancelar</button>
-    <button (click)="onSubmitDialog()" mat-button>Guardar</button> -->
 </div>

@@ -26,7 +26,7 @@ export class TableComponent {
 
   @Output() public onEditClick = new EventEmitter<User>();
 
-  @Output() public onDeleteClick = new EventEmitter<number>();
+  @Output() public onDeleteClick = new EventEmitter<User>();
 
   constructor() {}
 }
