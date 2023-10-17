@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from 'src/app/interfaces/user.interface';
 
 @Component({
@@ -23,6 +23,10 @@ export class TableComponent {
   public get displayedColumnsTable() {
     return this._displayedColumnsTable;
   }
+
+  @Output() public onEditClick = new EventEmitter<User>();
+
+  @Output() public onDeleteClick = new EventEmitter<number>();
 
   constructor() {}
 }

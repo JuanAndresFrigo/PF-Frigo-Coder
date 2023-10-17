@@ -11,7 +11,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UsersComponent {
   public userList: User[] = [];
-  public userColumns: string[] = ['id', 'name', 'docNumber', 'email'];
+  public userColumns: string[] = [
+    'id',
+    'name',
+    'docNumber',
+    'email',
+    'actions',
+  ];
 
   constructor(private userService: UserService) {
     this.getUsers();
