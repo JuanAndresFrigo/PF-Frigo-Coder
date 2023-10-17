@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { UppercaseDirectiveDirective } from './uppercase-directive.directive';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [UppercaseDirectiveDirective],

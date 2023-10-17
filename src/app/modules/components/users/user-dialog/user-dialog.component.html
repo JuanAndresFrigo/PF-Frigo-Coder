@@ -1,1 +1,62 @@
-<h1>contenido form</h1>
+<h1 mat-dialog-title>
+  {{ user ? "Editando usuario" : "Crear usuario" }}
+</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input formControlName="name" matInput />
+          <mat-error>
+            {{ userForm.get("name")?.errors | formErrors}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Apellido</mat-label>
+          <input formControlName="surname" matInput />
+          <mat-error>
+            {{ userForm.get("surname")?.errors | formErrors}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-4">
+        <mat-form-field class="w-100">
+          <mat-label>N° Documento</mat-label>
+          <input formControlName="docNumber" matInput />
+          <mat-error>
+            {{ userForm.get("docNumber")?.errors | formErrors}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-8">
+        <mat-form-field class="w-100">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          <mat-error>
+            {{ userForm.get("email")?.errors | formErrors}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <app-button
+    mat-dialog-close
+    (onButtonClick)="onCancelClick()"
+    buttonColor="accent"
+    buttonContent="Cancelar"
+  ></app-button>
+  <app-button
+    (onButtonClick)="onSaveClick()"
+    buttonContent="Guardar"
+    [buttonDisabled]="userForm.invalid"
+  ></app-button>
+  <!-- <button mat-dialog-close mat-button>Cancelar</button>
+    <button (click)="onSubmitDialog()" mat-button>Guardar</button> -->
+</div>

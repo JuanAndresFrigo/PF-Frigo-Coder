@@ -32,12 +32,19 @@ export class UsersComponent {
       .subscribe((users: User[]) => (this.userList = users));
   }
 
-  public openUsersDialog(){   
+  public openUsersDialog() {
     this.matDialog
       .open(UserDialogComponent)
       .afterClosed()
       .subscribe({
-        next: () => {
+        next: (newUser: User) => {
+          this.userList = [
+            ...this.userList,
+            {
+              ...newUser,
+              id: 5,
+            },
+          ];
         },
       });
   }

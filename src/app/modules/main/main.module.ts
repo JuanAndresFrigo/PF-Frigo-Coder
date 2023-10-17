@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { ToolbarModule } from 'src/app/components/toolbar/toolbar.module';
 import { SidenavModule } from 'src/app/components/sidenav/sidenav.module';
 import { UsersModule } from '../components/users/users.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [MainComponent],

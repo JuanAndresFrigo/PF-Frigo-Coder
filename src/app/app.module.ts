@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainModule } from './modules/main/main.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserModule } from '@angular/platform-browser';
+import { MainModule } from './modules/main/main.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule,
     BrowserAnimationsModule,
     MainModule,
-    MatFormFieldModule
+    MatFormFieldModule, MatInputModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
