@@ -10,6 +10,7 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { TableModule } from 'src/app/components/table/table.module';
 import { ButtonModule } from 'src/app/components/button/button.module';
 import { FormErrorsModule } from 'src/app/pipes/form-errors/form-errors.module';
+import { UsersRoutingModule } from './users-routing.module';
 @NgModule({
   declarations: [UsersComponent, UserDialogComponent],
   exports: [UsersComponent],
@@ -22,7 +23,8 @@ import { FormErrorsModule } from 'src/app/pipes/form-errors/form-errors.module';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    FormErrorsModule
+    FormErrorsModule,
+    UsersRoutingModule
   ],
 })
 export class UsersModule {}

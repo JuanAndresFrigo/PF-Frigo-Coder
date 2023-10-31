@@ -6,7 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
-import { MainModule } from './modules/main/main.module';
+import { MainModule } from './modules/safe/main/main.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,8 +15,9 @@ import { MainModule } from './modules/main/main.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MainModule,
-    MatFormFieldModule, MatInputModule, MatIconModule
+    RouterModule
+    // MainModule,
+    // MatFormFieldModule, MatInputModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
