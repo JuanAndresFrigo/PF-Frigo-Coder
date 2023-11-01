@@ -24,8 +24,6 @@ export class UserDialogComponent {
     });
 
     if (this.user) {
-      console.log('ctor', this.user);
-      
       this.userForm.patchValue(this.user);
     }
   }

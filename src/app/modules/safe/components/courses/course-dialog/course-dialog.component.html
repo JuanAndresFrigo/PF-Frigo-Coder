@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>
+  {{ course ? "Editando curso" : "Crear curso" }}
+</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <mat-form-field class="w-100">
+      <mat-label>Nombre del curso</mat-label>
+      <input formControlName="name" matInput />
+      <mat-error>
+        {{ courseForm.get("name")?.errors | formErrors }}
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <div class="mx-3">
+    <app-button
+      mat-dialog-close
+      (onButtonClick)="onCancelClick()"
+      buttonColor="accent"
+      buttonContent="Cancelar"
+    ></app-button>
+  </div>
+  <app-button
+    (onButtonClick)="onSaveClick()"
+    buttonContent="Guardar"
+    [buttonDisabled]="courseForm.invalid"
+  ></app-button>
+</div>
