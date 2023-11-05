@@ -1,5 +1,25 @@
 <main class="d-flex justify-content-center align-items-center">
   <div class="container">
-    <app-generic-card headerTitle="Iniciar sesión"></app-generic-card>
+    <app-generic-card headerTitle="Iniciar sesión" >
+      <!-- FORMULARIO -->
+      <form [formGroup]="loginForm">
+        <div>
+          <mat-form-field class="w-100">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="email" />
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" />
+          </mat-form-field>
+        </div>
+
+        <!-- BOTON DE INICIAR -->
+        <app-button class="d-flex justify-content-center "
+          (onButtonClick)="login()"
+          buttonContent="Iniciar sesión"
+        ></app-button>
+      </form>
+    </app-generic-card>
   </div>
 </main>

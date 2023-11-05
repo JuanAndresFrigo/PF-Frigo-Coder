@@ -4,12 +4,18 @@ export interface User {
   surname: string;
   docNumber: string;
   email: string;
+  token: string;
   rol: UserRole;
 }
 
 export interface UserRole {
   id: number;
-  rolDescription: string;
+  rolDescription: UserRoleDescription;
 }
 
 export type UserColumns = Omit<User, 'rol'>;
+
+export enum UserRoleDescription {
+  Admin = "ADMIN",
+  User = "USER",
+}

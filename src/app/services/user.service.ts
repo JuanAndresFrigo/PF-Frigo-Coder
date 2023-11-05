@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../interfaces/user.interface';
+import { User, UserRoleDescription } from '../interfaces/user.interface';
 import { of } from 'rxjs/internal/observable/of';
 import { Observable } from 'rxjs/internal/Observable';
 
@@ -10,7 +10,8 @@ const mockUsers: User[] = [
     surname: 'apellido1',
     docNumber: '12345678',
     email: 'email1@mail.com',
-    rol: { id: 100, rolDescription: 'adm' },
+    token: 'vbcfndgthyn',
+    rol: { id: 100, rolDescription: UserRoleDescription.Admin },
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const mockUsers: User[] = [
     surname: 'apellido2',
     docNumber: '12345678',
     email: 'email2@mail.com',
-    rol: { id: 200, rolDescription: 'user' },
+    token: 'sdffffwe',
+    rol: { id: 200, rolDescription: UserRoleDescription.User },
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ const mockUsers: User[] = [
     surname: 'apellido3',
     docNumber: '12345678',
     email: 'email3@mail.com',
-    rol: { id: 200, rolDescription: 'user' },
+    token: 'rtgrvcfd',
+    rol: { id: 200, rolDescription: UserRoleDescription.User },
   },
 ];
 
