@@ -2,18 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UnsafeRoutingModule } from './unsafe-routing.module';
-import { ButtonModule } from 'src/app/components/button/button.module';
-import { MatButtonModule } from '@angular/material/button';
-import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { UnsafeMainModule } from './unsafe-main/unsafe-main.module';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [],
   imports: [
     CommonModule,
     UnsafeRoutingModule,
-    MatButtonModule,
-    ButtonModule
+    UnsafeMainModule,
   ]
 })
 export class UnsafeModule { }

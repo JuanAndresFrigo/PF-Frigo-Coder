@@ -10,7 +10,5 @@ export class LoginComponent {
 
   constructor(private router: Router) {}
 
-  public goToUserPage(){
-    this.router.navigate(['/safe']);
-  }
+
 }

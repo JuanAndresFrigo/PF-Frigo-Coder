@@ -1,0 +1,17 @@
+<div class="container">
+
+  <mat-card class="example-card">
+    <mat-card-header *ngIf="headerTitle || headerSubtitle">
+      <mat-card-title>{{ headerTitle }}</mat-card-title>
+      <mat-card-subtitle>{{ headerSubtitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <ng-content></ng-content>
+    </mat-card-content>
+    <mat-card-actions *ngIf="showActionsButtons">
+      <app-button buttonContent="Cancelar" buttonColor="accent" class="me-3" (onButtonClick)="onCardCancelClick.emit()"></app-button>
+      <app-button buttonContent="Aceptar" (onButtonClick)="onCardAceptClick.emit()"></app-button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
