@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User, UserRole } from 'src/app/interfaces/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
+import { onlyNumbersValidator } from 'src/app/utils/only-number-validator';
 
 @Component({
   selector: 'app-register',
@@ -19,14 +20,31 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private router: Router
   ) {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      docNumber: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      repeatPassword: ['', Validators.required],
-    });
+    this.registerForm = this.fb.group(
+      {
+        name: ['', Validators.required],
+        surname: ['', Validators.required],
+        docNumber: [
+          '',
+          [
+            Validators.required,
+            Validators.maxLength(8),
+            onlyNumbersValidator(),
+          ],
+        ],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+        repeatPassword: ['', [Validators.required]],
+      },
+      {
+        validators: (control) => {
+          if (control.value.password !== control.value.repeatPassword) {
+            control.get('repeatPassword')?.setErrors({ notSame: true });
+          }
+          return null;
+        },
+      }
+    );
   }
 
   private genetareRandomString(): string {

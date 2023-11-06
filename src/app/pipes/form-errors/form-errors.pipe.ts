@@ -22,6 +22,18 @@ export class FormErrorsPipe implements PipeTransform {
       errorMessages.push('Ingresa solo letras');
     }
 
+    if ('maxlength' in value) {
+      errorMessages.push(`El largo máximo es ${value['maxlength'].requiredLength} caracteres`);
+    }
+
+    if ('onlyNumbersAllowed' in value) {
+      errorMessages.push('Sólo se permiten números');
+    }
+
+    if ('notSame' in value) {
+      errorMessages.push('Las contraseñas deben ser iguales');
+    }
+
     return errorMessages.join('. ');
   }
 }

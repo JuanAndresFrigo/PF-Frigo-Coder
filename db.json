@@ -29,6 +29,16 @@
       "token": "ahipob",
       "rol": "USER",
       "id": 3
+    },
+    {
+      "name": "Andres",
+      "surname": "Frigo",
+      "docNumber": "12312333",
+      "email": "andres@mail.com",
+      "password": "1234",
+      "token": "g68xb7",
+      "rol": "USER",
+      "id": 4
     }
   ],
   "courses": [
