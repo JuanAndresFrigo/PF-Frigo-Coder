@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs';
 import { Course } from 'src/app/interfaces/course.interface';
-import { CourseService } from 'src/app/services/course.service';
+import { CourseService } from 'src/app/modules/safe/services/course.service';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 
 @Component({

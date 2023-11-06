@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule, NgIf } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { ButtonModule } from '../button/button.module';
 
 @NgModule({
   declarations: [SidenavComponent],
@@ -11,9 +12,9 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     CommonModule,
     MatSidenavModule,
-    NgIf,
     MatButtonModule,
     MatListModule,
+    ButtonModule
   ],
 })
 export class SidenavModule {}

@@ -1,19 +1,21 @@
 {
   "users": [
     {
-      "name": "admin",
-      "lastName": "admin",
+      "name": "admin DB",
+      "surname": "admin",
       "email": "fake@mail.com",
       "password": "1234",
+      "docNumber": "12345678",
       "token": "asdfghjkl",
       "role": "ADMIN",
       "id": 1
     },
     {
-      "name": "admin",
-      "surname": "admin",
+      "name": "admin DB",
+      "surname": "surnameAdmin",
       "email": "test@mail.com",
       "password": "1234",
+      "docNumber": "12345678",
       "token": "asdfñlkj",
       "role": "ADMIN",
       "id": 2
@@ -21,13 +23,62 @@
   ],
   "courses": [
     {
-      "name": "admin",
-      "lastName": "admin",
-      "email": "fake@mail.com",
-      "password": "123456",
-      "token": "qwertyuiop",
-      "role": "ADMIN",
-      "id": 1
+      "id": "1",
+      "name": "curso1 DB",
+      "classes": [
+        { "id": "1", "name": "clase1" },
+        { "id": "2", "name": "clase2" },
+        { "id": "3", "name": "clase3" }
+      ],
+      "users": [
+        {
+          "id": 1,
+          "name": "nombre1",
+          "surname": "apellido1",
+          "docNumber": "12345678",
+          "email": "email1@mail.com",
+          "token": "asdf",
+          "rol": { "id": 100, "rolDescription": "ADMIN" }
+        },
+        {
+          "id": 2,
+          "name": "nombre2",
+          "surname": "apellido2",
+          "docNumber": "12345678",
+          "email": "email2@mail.com",
+          "token": "qwer",
+          "rol": { "id": 200, "rolDescription": "USER" }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "curso2 DB",
+      "classes": [
+        { "id": "1", "name": "clase1" },
+        { "id": "2", "name": "clase2" },
+        { "id": "3", "name": "clase3" }
+      ],
+      "users": [
+        {
+          "id": 1,
+          "name": "nombre1",
+          "surname": "apellido1",
+          "docNumber": "12345678",
+          "email": "email1@mail.com",
+          "token": "asdf",
+          "rol": { "id": 100, "rolDescription": "ADMIN" }
+        },
+        {
+          "id": 2,
+          "name": "nombre2",
+          "surname": "apellido2",
+          "docNumber": "12345678",
+          "email": "email2@mail.com",
+          "token": "qwer",
+          "rol": { "id": 200, "rolDescription": "USER" }
+        }
+      ]
     }
   ]
 }

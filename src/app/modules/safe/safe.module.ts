@@ -5,10 +5,6 @@ import { MainModule } from './main/main.module';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    SafeRoutingModule,
-    MainModule,
-  ],
+  imports: [CommonModule, SafeRoutingModule, MainModule],
 })
 export class SafeModule {}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs/operators';
 import { User } from 'src/app/interfaces/user.interface';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/modules/safe/services/user.service';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { FullnamePipe } from 'src/app/pipes/fullname/fullname.pipe';
 
@@ -22,7 +22,11 @@ export class UsersComponent {
     'actions',
   ];
 
-  constructor(private userService: UserService, private matDialog: MatDialog, private fullnamePipe:FullnamePipe) {
+  constructor(
+    private userService: UserService,
+    private matDialog: MatDialog,
+    private fullnamePipe: FullnamePipe
+  ) {
     this.getUsers();
   }
 
@@ -70,8 +74,8 @@ export class UsersComponent {
   }
 
   public onDeleteUserClick(userToDelete: User) {
-    const userFullname:string = this.fullnamePipe.transform(userToDelete)
-    const message:string = `¿Esta seguro que quiere borrar a ${userFullname}?`
+    const userFullname: string = this.fullnamePipe.transform(userToDelete);
+    const message: string = `¿Esta seguro que quiere borrar a ${userFullname}?`;
 
     if (confirm(message)) {
       this.userList = this.userList.filter((u) => u.id !== userToDelete.id);

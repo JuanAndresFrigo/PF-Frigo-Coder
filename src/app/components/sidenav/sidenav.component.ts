@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -24,7 +25,7 @@ export class SidenavComponent {
 
   // public getCurrentRoute:string = ''
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private authService: AuthService) {
     this.getModuleRoute;
   }
 
@@ -32,9 +33,13 @@ export class SidenavComponent {
     this.onItemClick.emit(item);
   }
 
-  public get getModuleRoute():string {
+  public get getModuleRoute(): string {
     // Retorno el mudulo que cargó safe: /safe/users -> users
     const completeUrl: string = this.route.url.replace('/safe/', '');
     return completeUrl.split('/')[0];
+  }
+
+  public onLogoutClick() {
+    this.authService.logout();
   }
 }
