@@ -49,4 +49,8 @@ export class AuthService {
     localStorage.removeItem('token');
     this.router.navigate(['/unsafe']);
   }
+
+  public registerUser(userToRegister: User): Observable<User> {
+    return this.httpClient.post<User>(`${this._urlBase}/users`, userToRegister);
+  }
 }

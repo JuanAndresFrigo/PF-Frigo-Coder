@@ -50,4 +50,8 @@ export class LoginComponent {
     this._authUser$.next(authUser);
     localStorage.setItem('token', authUser.token);
   }
+
+  public goToRegister(){
+    this.router.navigate(['unsafe/register']);
+  }
 }
