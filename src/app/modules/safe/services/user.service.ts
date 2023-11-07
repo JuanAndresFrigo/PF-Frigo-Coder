@@ -13,4 +13,16 @@ export class UserService {
   public getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(`${this._urlBase}/users`);
   }
+
+  public createUser(userToCreat: User): Observable<User> {
+    return this.httpClient.post<User>(`${this._urlBase}/users`, userToCreat);
+  }
+
+  public editUser(userToEdit: User): Observable<User> {
+    return this.httpClient.put<User>(`${this._urlBase}/users/${userToEdit.id}`, userToEdit);
+  }
+
+  public deleteUser(userToDelete: User): Observable<User> {
+    return this.httpClient.delete<User>(`${this._urlBase}/users/${userToDelete.id}`);
+  }
 }

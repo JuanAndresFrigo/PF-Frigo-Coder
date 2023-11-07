@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { take } from 'rxjs/operators';
-import { User } from 'src/app/interfaces/user.interface';
+import { take, tap } from 'rxjs/operators';
+import { User, UserRole } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/modules/safe/services/user.service';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { FullnamePipe } from 'src/app/pipes/fullname/fullname.pipe';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -13,7 +14,8 @@ import { FullnamePipe } from 'src/app/pipes/fullname/fullname.pipe';
   providers: [UserService, FullnamePipe],
 })
 export class UsersComponent {
-  public userList: User[] = [];
+  public userList$?: Observable<User[]>;
+
   public userColumns: string[] = [
     'id',
     'name',
@@ -31,10 +33,7 @@ export class UsersComponent {
   }
 
   private getUsers(): void {
-    this.userService
-      .getUsers()
-      .pipe(take(1))
-      .subscribe((users: User[]) => (this.userList = users));
+    this.userList$ = this.userService.getUsers().pipe(take(1));
   }
 
   public openUsersDialog() {
@@ -43,15 +42,26 @@ export class UsersComponent {
       .afterClosed()
       .subscribe({
         next: (newUser: User) => {
-          if (newUser) {
-            this.userList = [
-              ...this.userList,
-              {
-                ...newUser,
-                id: 5,
-              },
-            ];
-          }
+          if (!newUser) return;
+          const { name, surname, docNumber, email, password } = newUser;
+
+          const userToCreate: User = {
+            name,
+            surname,
+            docNumber,
+            email,
+            password,
+            token: this.genetareRandomString(),
+            rol: UserRole.User,
+          };
+
+          this.userService
+            .createUser(userToCreate)
+            .pipe(
+              take(1),
+              tap(() => this.getUsers())
+            )
+            .subscribe();
         },
       });
   }
@@ -64,11 +74,27 @@ export class UsersComponent {
       .afterClosed()
       .subscribe({
         next: (editedUser: User) => {
-          if (editedUser) {
-            this.userList = this.userList.map((user: User) =>
-              user.id === userToEdit.id ? { ...user, ...editedUser } : user
-            );
-          }
+          if (!editedUser) return;
+          const { name, surname, docNumber, email, password } = editedUser;
+
+          const userEdited: User = {
+            id: userToEdit.id,
+            name,
+            surname,
+            docNumber,
+            email,
+            password,
+            token: this.genetareRandomString(),
+            rol: UserRole.User,
+          };
+
+          this.userService
+            .editUser(userEdited)
+            .pipe(
+              take(1),
+              tap(() => this.getUsers())
+            )
+            .subscribe();
         },
       });
   }
@@ -78,7 +104,17 @@ export class UsersComponent {
     const message: string = `¿Esta seguro que quiere borrar a ${userFullname}?`;
 
     if (confirm(message)) {
-      this.userList = this.userList.filter((u) => u.id !== userToDelete.id);
+      this.userService
+        .deleteUser(userToDelete)
+        .pipe(
+          take(1),
+          tap(() => this.getUsers())
+        )
+        .subscribe();
     }
+  }
+
+  private genetareRandomString(): string {
+    return (Math.random() + 1).toString(36).substring(6);
   }
 }

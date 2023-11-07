@@ -10,8 +10,8 @@ export class TableComponent {
   public _dataSourceTable: User[] = [];
   public _displayedColumnsTable: string[] = [];
 
-  @Input() public set dataSourceTable(listUser: User[]) {
-    this._dataSourceTable = listUser;
+  @Input() public set dataSourceTable(listUser: User[] | null) {
+    if (listUser) this._dataSourceTable = listUser;
   }
   public get dataSourceTable() {
     return this._dataSourceTable;

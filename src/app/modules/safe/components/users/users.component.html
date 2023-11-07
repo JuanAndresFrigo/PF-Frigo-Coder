@@ -9,7 +9,7 @@
     ></app-button>
   </div>
   <app-table
-    [dataSourceTable]="userList"
+    [dataSourceTable]="userList$ | async"
     [displayedColumnsTable]="userColumns"
     (onEditClick)="onEditUserClick($event)"
     (onDeleteClick)="onDeleteUserClick($event)"

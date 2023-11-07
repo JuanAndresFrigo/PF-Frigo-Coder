@@ -1,62 +1,83 @@
-<h1 mat-dialog-title>
-  {{ user ? "Editando usuario" : "Crear usuario" }}
-</h1>
+<div class="container">
+  <h1 mat-dialog-title>
+    {{ user ? "Editando usuario" : "Crear usuario" }}
+  </h1>
 
-<div mat-dialog-content>
-  <form [formGroup]="userForm">
-    <div class="row">
-      <div class="col-6">
-        <mat-form-field class="w-100">
-          <mat-label>Nombre</mat-label>
-          <input formControlName="name" matInput />
+  <div mat-dialog-content>
+    <form [formGroup]="userForm">
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field class="w-100">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput />
+            <mat-error>
+              {{ userForm.get("name")?.errors | formErrors }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field class="w-100">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="surname" matInput />
+            <mat-error>
+              {{ userForm.get("surname")?.errors | formErrors }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <mat-form-field class="w-100">
+            <mat-label>N° Documento</mat-label>
+            <input formControlName="docNumber" matInput />
+            <mat-error>
+              {{ userForm.get("docNumber")?.errors | formErrors }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-8">
+          <mat-form-field class="w-100">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput />
+            <mat-error>
+              {{ userForm.get("email")?.errors | formErrors }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="col-6">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput type="password" />
           <mat-error>
-            {{ userForm.get("name")?.errors | formErrors }}
+            {{ userForm.get("password")?.errors | formErrors }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-6">
+          <mat-label>Repetir password</mat-label>
+          <input formControlName="repeatPassword" matInput type="password" />
+          <mat-error>
+            {{ userForm.get("repeatPassword")?.errors | formErrors }}
           </mat-error>
         </mat-form-field>
       </div>
-      <div class="col-6">
-        <mat-form-field class="w-100">
-          <mat-label>Apellido</mat-label>
-          <input formControlName="surname" matInput />
-          <mat-error>
-            {{ userForm.get("surname")?.errors | formErrors }}
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="col-4">
-        <mat-form-field class="w-100">
-          <mat-label>N° Documento</mat-label>
-          <input formControlName="docNumber" matInput />
-          <mat-error>
-            {{ userForm.get("docNumber")?.errors | formErrors }}
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <div class="col-8">
-        <mat-form-field class="w-100">
-          <mat-label>Email</mat-label>
-          <input formControlName="email" matInput />
-          <mat-error>
-            {{ userForm.get("email")?.errors | formErrors }}
-          </mat-error>
-        </mat-form-field>
-      </div>
+    </form>
+  </div>
+
+  <div mat-dialog-actions>
+    <div class="mx-3">
+      <app-button
+        mat-dialog-close
+        (onButtonClick)="onCancelClick()"
+        buttonColor="accent"
+        buttonContent="Cancelar"
+      ></app-button>
     </div>
-  </form>
-</div>
-
-<div mat-dialog-actions>
-  <div class="mx-3">
     <app-button
-      mat-dialog-close
-      (onButtonClick)="onCancelClick()"
-      buttonColor="accent"
-      buttonContent="Cancelar"
+      (onButtonClick)="onSaveClick()"
+      buttonContent="Guardar"
+      [buttonDisabled]="userForm.invalid"
     ></app-button>
   </div>
-  <app-button
-    (onButtonClick)="onSaveClick()"
-    buttonContent="Guardar"
-    [buttonDisabled]="userForm.invalid"
-  ></app-button>
 </div>

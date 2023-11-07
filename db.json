@@ -1,14 +1,14 @@
 {
   "users": [
     {
-      "name": "admin DB",
+      "id": 1,
+      "name": "admin",
       "surname": "admin",
+      "docNumber": "11222333",
       "email": "admin@mail.com",
       "password": "1234",
-      "docNumber": "12345678",
-      "token": "asdfghjkl",
-      "role": "ADMIN",
-      "id": 1
+      "token": "cfvdzp",
+      "rol": "ADMIN"
     },
     {
       "name": "admin DB",
@@ -31,14 +31,14 @@
       "id": 3
     },
     {
+      "id": 4,
       "name": "Andres",
-      "surname": "Frigo",
+      "surname": "Frigo EDITADOOO",
       "docNumber": "12312333",
       "email": "andres@mail.com",
       "password": "1234",
-      "token": "g68xb7",
-      "rol": "USER",
-      "id": 4
+      "token": "apczpq",
+      "rol": "USER"
     }
   ],
   "courses": [
