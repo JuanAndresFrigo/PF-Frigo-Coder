@@ -43,7 +43,7 @@ export class UsersComponent {
       .subscribe({
         next: (newUser: User) => {
           if (!newUser) return;
-          const { name, surname, docNumber, email, password } = newUser;
+          const { name, surname, docNumber, email, password, rol } = newUser;
 
           const userToCreate: User = {
             name,
@@ -52,7 +52,7 @@ export class UsersComponent {
             email,
             password,
             token: this.genetareRandomString(),
-            rol: UserRole.User,
+            rol,
           };
 
           this.userService

@@ -62,6 +62,10 @@
           </mat-error>
         </mat-form-field>
       </div>
+      <app-radio-button
+        [radioButtonList]="['Alumno', 'ADMIN']"
+        (radioButtonChange)="setUserRol($event)"
+      ></app-radio-button>
     </form>
   </div>
 

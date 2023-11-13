@@ -14,6 +14,10 @@ export class UserService {
     return this.httpClient.get<User[]>(`${this._urlBase}/users`);
   }
 
+  public getUsersById(idUser: number): Observable<User> {
+    return this.httpClient.get<User>(`${this._urlBase}/users/${idUser}`);
+  }
+
   public createUser(userToCreat: User): Observable<User> {
     return this.httpClient.post<User>(`${this._urlBase}/users`, userToCreat);
   }

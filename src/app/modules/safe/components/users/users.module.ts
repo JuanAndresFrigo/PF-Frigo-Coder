@@ -11,6 +11,7 @@ import { TableModule } from 'src/app/components/table/table.module';
 import { ButtonModule } from 'src/app/components/button/button.module';
 import { FormErrorsModule } from 'src/app/pipes/form-errors/form-errors.module';
 import { UsersRoutingModule } from './users-routing.module';
+import { RadioButtonModule } from 'src/app/components/radio-button/radio-button.module';
 @NgModule({
   declarations: [UsersComponent, UserDialogComponent],
   exports: [UsersComponent],
@@ -24,7 +25,8 @@ import { UsersRoutingModule } from './users-routing.module';
     MatInputModule,
     MatIconModule,
     FormErrorsModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    RadioButtonModule,
   ],
 })
 export class UsersModule {}
