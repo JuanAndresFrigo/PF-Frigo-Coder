@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { take, tap } from 'rxjs/operators';
-import { User, UserRole } from 'src/app/interfaces/user.interface';
+import { User } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/modules/safe/services/user.service';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { FullnamePipe } from 'src/app/pipes/fullname/fullname.pipe';
@@ -75,7 +75,7 @@ export class UsersComponent {
       .subscribe({
         next: (editedUser: User) => {
           if (!editedUser) return;
-          const { name, surname, docNumber, email, password } = editedUser;
+          const { name, surname, docNumber, email, password, rol } = editedUser;
 
           const userEdited: User = {
             id: userToEdit.id,
@@ -85,7 +85,7 @@ export class UsersComponent {
             email,
             password,
             token: this.genetareRandomString(),
-            rol: UserRole.User,
+            rol
           };
 
           this.userService
