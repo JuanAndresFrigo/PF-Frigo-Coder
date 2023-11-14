@@ -11,10 +11,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GenericCardModule } from 'src/app/components/generic-card/generic-card.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EMPTY } from 'rxjs';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+
+  let mockSomeService = {
+    login: () => EMPTY,
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -30,7 +35,7 @@ describe('LoginComponent', () => {
         ButtonModule,
         MatButtonModule,
       ],
-      providers: [AuthService],
+      providers: [{ provide: AuthService, useValue: mockSomeService }],
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
@@ -39,5 +44,25 @@ describe('LoginComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Si el form es inválido, debe marcar todos los campos del form como "touched" ', () => {
+    component.loginForm.patchValue({
+      email: 'asdfasdfasdf',
+      password: '',
+    });
+    component.login();
+    expect(component.loginForm.controls['email'].touched).toBeTrue();
+    expect(component.loginForm.controls['password'].touched).toBeTrue();
+  });
+
+  it('Si el formulario es válido, debe llamar el metodo login del AuthService', () => {
+    component.loginForm.patchValue({
+      email: 'fake@mail.com',
+      password: '123456',
+    });
+    spyOn(mockSomeService, 'login').and.returnValue(EMPTY);
+    component.login();
+    expect(mockSomeService.login).toHaveBeenCalled();
   });
 });
