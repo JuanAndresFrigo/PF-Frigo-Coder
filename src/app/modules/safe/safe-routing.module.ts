@@ -20,6 +20,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'enrrollments', //main/enrrollments
+        loadChildren: () =>
+          import('./components/enrrollments/enrrollments.module').then(
+            (m) => m.EnrrollmentsModule
+          ),
+      },
+      {
         path: '**',
         redirectTo: 'users',
       },

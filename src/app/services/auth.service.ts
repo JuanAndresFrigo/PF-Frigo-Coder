@@ -5,15 +5,24 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 import { environment } from 'src/environments/environment.local';
 import { LoginPayload } from '../interfaces/login-payload.interface';
+import { Store } from '@ngrx/store';
+import { AuthActions } from '../store/auth/auth.actions';
+import { selectAuthUser } from '../store/auth/auth.selectors';
 
 @Injectable()
 export class AuthService {
   private _urlBase: string = environment.baseUrl;
-  private _authUser$ = new BehaviorSubject<User | null>(null);
 
-  public authUser$ = this._authUser$.asObservable();
+  // private _authUser$ = new BehaviorSubject<User | null>(null);
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  // public authUser$ = this._authUser$.asObservable();
+  public authUser$ = this.store.select(selectAuthUser);
+
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private store: Store
+  ) {}
 
   public login(payload: LoginPayload): Observable<User[]> {
     return this.httpClient.get<User[]>(
@@ -40,12 +49,15 @@ export class AuthService {
 
   private setLocalStorage(users: User[]) {
     const authUser = users[0];
-    this._authUser$.next(authUser);
+    // this._authUser$.next(authUser);
+    this.store.dispatch(AuthActions.setAuthUser({ data: authUser }));
     localStorage.setItem('token', authUser.token);
   }
 
   public logout(): void {
-    this._authUser$.next(null);
+
+    // this._authUser$.next(null);
+    this.store.dispatch(AuthActions.resetState());
     localStorage.removeItem('token');
     this.router.navigate(['/unsafe']);
   }

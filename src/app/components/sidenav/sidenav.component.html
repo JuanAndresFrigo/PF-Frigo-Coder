@@ -17,6 +17,12 @@
         [activated]="getModuleRoute === 'users'"
         >Alumnos</mat-list-item
       >
+      <mat-list-item
+        role="listitem"
+        (click)="onNavItemClick('enrrollments')"
+        [activated]="getModuleRoute === 'enrrollments'"
+        >Inscripciones</mat-list-item
+      >
       <mat-list-item role="listitem" (click)="onNavItemClick('users')">
         <app-button
           (onButtonClick)="onLogoutClick()"

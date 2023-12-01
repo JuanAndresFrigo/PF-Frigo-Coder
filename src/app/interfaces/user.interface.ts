@@ -14,4 +14,5 @@ export type UserColumns = Omit<User, 'rol'>;
 export enum UserRole {
   Admin = "ADMIN",
   User = "USER",
+  Student = "STUDENT",
 }

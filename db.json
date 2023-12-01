@@ -24,21 +24,11 @@
       "name": "Juan",
       "surname": "Frigo",
       "docNumber": "37123123",
-      "email": "juan@mail.com",
+      "email": "user@mail.com",
       "password": "1234",
       "token": "ahipob",
       "rol": "USER",
       "id": 3
-    },
-    {
-      "id": 4,
-      "name": "Andres",
-      "surname": "Frigo EDITADOOO",
-      "docNumber": "12312333",
-      "email": "andres@mail.com",
-      "password": "1234",
-      "token": "apczpq",
-      "rol": "USER"
     }
   ],
   "courses": [
@@ -58,26 +48,6 @@
           "id": "3",
           "name": "clase3"
         }
-      ],
-      "users": [
-        {
-          "id": 1,
-          "name": "nombre1",
-          "surname": "apellido1",
-          "docNumber": "12345678",
-          "email": "email1@mail.com",
-          "token": "asdf",
-          "role": "ADMIN"
-        },
-        {
-          "id": 2,
-          "name": "nombre2",
-          "surname": "apellido2",
-          "docNumber": "12345678",
-          "email": "email2@mail.com",
-          "token": "qwer",
-          "role": "USER"
-        }
       ]
     },
     {
@@ -96,27 +66,24 @@
           "id": "3",
           "name": "clase3"
         }
-      ],
-      "users": [
-        {
-          "id": 1,
-          "name": "nombre1",
-          "surname": "apellido1",
-          "docNumber": "12345678",
-          "email": "email1@mail.com",
-          "token": "asdf",
-          "role": "ADMIN"
-        },
-        {
-          "id": 2,
-          "name": "nombre2",
-          "surname": "apellido2",
-          "docNumber": "12345678",
-          "email": "email2@mail.com",
-          "token": "qwer",
-          "role": "USER"
-        }
       ]
+    }
+  ],
+  "enrrollments": [
+    {
+      "id": 1,
+      "courseId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "courseId": 2,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "courseId": 2,
+      "userId": 2
     }
   ]
 }
