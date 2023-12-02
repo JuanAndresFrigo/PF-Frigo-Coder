@@ -1,1 +1,17 @@
-<p>enrrollments works!</p>
+<div class="container pt-3">
+  <h1>Inscripciones</h1>
+
+  <div class="mb-3">
+    <app-button
+      (onButtonClick)="openEnrrollmentDialog()"
+      buttonContent="Nueva inscripción"
+      buttonIcon="add"
+    ></app-button>
+  </div>
+  <app-table-enrrollments
+    [dataSourceTable]="(enrrollments$ | async) || []"
+    [displayedColumnsTable]="enrrollmentsColumns"
+    (onEditClick)="onEditEnrrollmentClick($event)"
+    (onDeleteClick)="onDeleteEnrrollmentClick($event)"
+    ></app-table-enrrollments>
+</div>

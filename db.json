@@ -11,13 +11,13 @@
       "rol": "ADMIN"
     },
     {
-      "name": "admin DB",
+      "name": "student DB",
       "surname": "surnameAdmin",
-      "email": "test@mail.com",
+      "email": "student@mail.com",
       "password": "1234",
       "docNumber": "12345678",
       "token": "asdfñlkj",
-      "role": "ADMIN",
+      "role": "STUDENT",
       "id": 2
     },
     {
@@ -29,11 +29,21 @@
       "token": "ahipob",
       "rol": "USER",
       "id": 3
+    },
+    {
+      "name": "student 4",
+      "surname": "stu4",
+      "email": "student4@mail.com",
+      "password": "1234",
+      "docNumber": "12345678",
+      "token": "asdfñlkj",
+      "role": "STUDENT",
+      "id": 4
     }
   ],
   "courses": [
     {
-      "id": "1",
+      "id": 1,
       "name": "curso1 DB",
       "classes": [
         {
@@ -51,7 +61,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "curso2 DB",
       "classes": [
         {
@@ -84,6 +94,41 @@
       "id": 3,
       "courseId": 2,
       "userId": 2
+    },
+    {
+      "courseId": 1,
+      "userId": 4,
+      "id": 4
+    },
+    {
+      "courseId": 2,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "courseId": 1,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "id": 8,
+      "courseId": 2,
+      "userId": 4
+    },
+    {
+      "courseId": 2,
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "courseId": 1,
+      "userId": 4
+    },
+    {
+      "id": 11,
+      "courseId": 1,
+      "userId": 4
     }
   ]
 }

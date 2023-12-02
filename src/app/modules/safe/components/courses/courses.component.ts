@@ -67,7 +67,7 @@ export class CoursesComponent {
   }
 
   public onDeleteCourseClick(courseToDelete: Course) {
-    const message:string = `¿Esta seguro que quiere borrar a ${courseToDelete.name}?`
+    const message:string = `¿Esta seguro que quiere borrar el curso: ${courseToDelete.name}?`
 
     if (confirm(message)) {
       this.courseList = this.courseList.filter((c) => c.id !== courseToDelete.id);

@@ -14,7 +14,6 @@ export class CounterComponent {
 
   constructor(private store: Store) {
     this.counterValue$ = this.store.select(selectCounterValue);
-    // this.store.select(selectCounterValueX2).subscribe(console.log);
   }
 
   sumar(): void {

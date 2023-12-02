@@ -20,30 +20,6 @@ export class RadioButtonComponent {
 
   @Output() public radioButtonChange = new EventEmitter<string>();
 
-  // public ngAfterViewInit(): void {
-  //   console.log('after');
-
-  //   console.log(
-  //     '🚀 ~ file: radio-button.component.ts:26 ~ RadioButtonComponent ~ ngAfterViewInit ~ this.radioButtonList:',
-  //     this.radioButtonList
-  //   );
-  //   if (this.radioButtonList) {
-  //     this.onRadioButtonChange(this.radioButtonList[0]);
-  //   }
-  // }
-
-  // ngAfterViewInit(): void {
-  //   console.log(this.radioButtonList);
-
-  //   this.onRadioButtonChange('Alumno')
-  // }
-
-  // chosenItem = this.radioButtonList[0];
-
-  // public get defaultItem(): string {
-  //   return this.radioButtonList ? this.radioButtonList[0] : '';
-  // }
-
   public onRadioButtonChange(item: string) {
     this.radioButtonChange.emit(item);
   }

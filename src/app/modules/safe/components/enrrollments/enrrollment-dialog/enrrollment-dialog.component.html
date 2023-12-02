@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>
+  {{ enrrollment ? "Editando inscripción" : "Nueva inscripción" }}
+</h1>
+
+
+<div mat-dialog-content>
+  <form class="row">
+    <div class="col-6">
+      <app-dropdown
+        dropdownLabel="Curso"
+        [dropdownOptions]="courseOptions$ | async"
+        [dropdownValue]="courseControl"
+        (onSelectItem)="onSelectCourse($event)"
+      ></app-dropdown>
+    </div>
+    <div class="col-6">
+      <app-dropdown
+        dropdownLabel="Alumno"
+        [dropdownOptions]="studentOptions$ | async"
+        [dropdownValue]="userControl"
+        (onSelectItem)="onSelectStudent($event)"
+      ></app-dropdown>
+    </div>
+  </form>
+  {{ enrrollmentForm.value | json }}
+</div>
+
+<div mat-dialog-actions>
+  <div class="mx-3">
+    <app-button
+      mat-dialog-close
+      (onButtonClick)="onCancelClick()"
+      buttonColor="accent"
+      buttonContent="Cancelar"
+    ></app-button>
+  </div>
+  <app-button
+    (onButtonClick)="enrrollment ? onEditClick() : onSaveClick()"
+    buttonContent="Guardar"
+    [buttonDisabled]="enrrollmentForm.invalid"
+  ></app-button>
+</div>
