@@ -7,15 +7,21 @@
     <mat-nav-list role="list">
       <mat-list-item
         role="listitem"
+        (click)="onNavItemClick('users')"
+        [activated]="getModuleRoute === 'users'"
+        >Usuarios</mat-list-item
+      >
+      <!-- <mat-list-item
+        role="listitem"
+        (click)="onNavItemClick('students')"
+        [activated]="getModuleRoute === 'students'"
+        >Alumnos</mat-list-item
+      > -->
+      <mat-list-item
+        role="listitem"
         (click)="onNavItemClick('courses')"
         [activated]="getModuleRoute === 'courses'"
         >Cursos</mat-list-item
-      >
-      <mat-list-item
-        role="listitem"
-        (click)="onNavItemClick('users')"
-        [activated]="getModuleRoute === 'users'"
-        >Alumnos</mat-list-item
       >
       <mat-list-item
         role="listitem"

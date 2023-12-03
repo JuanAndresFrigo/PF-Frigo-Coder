@@ -17,7 +17,7 @@
       "password": "1234",
       "docNumber": "12345678",
       "token": "asdfñlkj",
-      "role": "STUDENT",
+      "rol": "STUDENT",
       "id": 2
     },
     {
@@ -37,7 +37,7 @@
       "password": "1234",
       "docNumber": "12345678",
       "token": "asdfñlkj",
-      "role": "STUDENT",
+      "rol": "STUDENT",
       "id": 4
     }
   ],

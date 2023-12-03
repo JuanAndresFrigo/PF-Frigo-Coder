@@ -23,8 +23,6 @@ export class SidenavComponent {
   }
   @Output() public onItemClick = new EventEmitter<string>();
 
-  // public getCurrentRoute:string = ''
-
   constructor(private route: Router, private authService: AuthService) {
     this.getModuleRoute;
   }

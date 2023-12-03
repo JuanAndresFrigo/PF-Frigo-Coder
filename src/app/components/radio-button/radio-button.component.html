@@ -2,6 +2,7 @@
   <mat-radio-button
     *ngFor="let item of radioButtonList"
     [value]="item"
+    [checked]="item === radioButtonItemToSet"
     (change)="onRadioButtonChange(item)"
     >{{ item }}</mat-radio-button
   >

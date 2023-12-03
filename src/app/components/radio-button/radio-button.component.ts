@@ -17,6 +17,7 @@ export class RadioButtonComponent {
   @Input() public radioButtonList: string[] = [];
   @Input() public radioButtonColor: ThemePalette = 'primary';
   @Input() public radioButtonDisabled: boolean = false;
+  @Input() public radioButtonItemToSet: string = '';
 
   @Output() public radioButtonChange = new EventEmitter<string>();
 

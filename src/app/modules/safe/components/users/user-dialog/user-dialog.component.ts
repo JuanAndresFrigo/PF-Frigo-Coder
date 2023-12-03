@@ -60,7 +60,6 @@ export class UserDialogComponent {
   }
 
   public setUserRol(item: string) {
-    const userRol: string = item === 'Alumno' ? UserRole.User : UserRole.Admin;
-    this.userForm.controls['rol'].setValue(userRol);
+    this.userForm.controls['rol'].setValue(item);
   }
 }
