@@ -9,4 +9,17 @@
   </button>
   <span>PF-Frigo</span>
   <span class="example-spacer"></span>
+
+  <div class="row" *ngIf="loggedUser$ | async">
+    <div class="col-1">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="person"
+      ></mat-icon>
+    </div>
+    <div class="col person-name">
+      <span>{{loggedUser$ | async | fullname | titlecase }}</span>
+    </div>
+  </div>
 </mat-toolbar>

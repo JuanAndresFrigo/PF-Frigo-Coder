@@ -49,14 +49,12 @@ export class AuthService {
 
   private setLocalStorage(users: User[]) {
     const authUser = users[0];
-    // this._authUser$.next(authUser);
     this.store.dispatch(AuthActions.setAuthUser({ data: authUser }));
     localStorage.setItem('token', authUser.token);
   }
 
   public logout(): void {
 
-    // this._authUser$.next(null);
     this.store.dispatch(AuthActions.resetState());
     localStorage.removeItem('token');
     this.router.navigate(['/unsafe']);
