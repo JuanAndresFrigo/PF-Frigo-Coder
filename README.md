@@ -4,24 +4,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Run `json-server --watch db.json` -> Para levantar el servidor del BE, en `http://localhost:3000`
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Register
+    * Este módulo, permite a un usuario registrarse en la aplicación.
+        * Será generado un nuevo usuario con el rol: 'USER'.
+        * Sólo un usuario con rol ADMIN, puede generar un nuevo usuario con rol ADMIN. (desde el alta de usuario)
+2. Login
+    * Este módulo, permite a un usuario ya registrado, ingresar a la aplicación.
+<!-- 2. Item 3
+    * A corollary that does not need to be ordered.
+        * This is indented eight spaces, because it's four spaces further than the item above.
+        * You might want to consider making a new list. -->

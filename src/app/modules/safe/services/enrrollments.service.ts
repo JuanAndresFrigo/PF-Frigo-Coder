@@ -21,14 +21,14 @@ export class EnrrollmentsService {
     );
   }
 
-  public getEnrrollmentsByUserId(idUser: number): Observable<Enrrollment> {
-    return this.httpClient.get<Enrrollment>(
-      `${this._urlBase}/enrrollments?userId=${idUser}`
+  public getEnrrollmentsByUserId(idUser: number): Observable<Enrrollment[]> {
+    return this.httpClient.get<Enrrollment[]>(
+      `${this._urlBase}/enrrollments?userId=${idUser}&_expand=course&_expand=user`
     );
   }
 
-  public getEnrrollmentsByCourseId(idCourse: number): Observable<Enrrollment> {
-    return this.httpClient.get<Enrrollment>(
+  public getEnrrollmentsByCourseId(idCourse: number): Observable<Enrrollment[]> {
+    return this.httpClient.get<Enrrollment[]>(
       `${this._urlBase}/enrrollments?courseId=${idCourse}`
     );
   }

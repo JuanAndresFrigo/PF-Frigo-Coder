@@ -6,6 +6,26 @@ const routes: Routes = [
   {
     path: '',
     component: UsersComponent,
+    children: [
+      {
+        path: 'main',
+        loadChildren: () =>
+          import('./user-main/users-main.module').then(
+            (m) => m.UsersMainModule
+          ),
+      },
+      {
+        path: 'detail/:id',
+        loadChildren: () =>
+          import('./user-detail/user-detail.module').then(
+            (m) => m.UserDetailModule
+          ),
+      },
+      {
+        path: '**',
+        redirectTo: 'main',
+      },
+    ],
   },
   {
     path: '**',

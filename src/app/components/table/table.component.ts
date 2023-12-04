@@ -24,6 +24,7 @@ export class TableComponent {
     return this._displayedColumnsTable;
   }
 
+  @Output() public onInfoClick = new EventEmitter<User>();
   @Output() public onEditClick = new EventEmitter<User>();
   @Output() public onDeleteClick = new EventEmitter<User>();
 
