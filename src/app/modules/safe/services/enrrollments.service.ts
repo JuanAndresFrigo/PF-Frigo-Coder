@@ -39,7 +39,7 @@ export class EnrrollmentsService {
   }> {
     return forkJoin([
       this.httpClient.get<Course[]>(`${environment.baseUrl}/courses`),
-      this.httpClient.get<User[]>(`${environment.baseUrl}/users?role=STUDENT`),
+      this.httpClient.get<User[]>(`${environment.baseUrl}/users?rol=STUDENT`),
     ]).pipe(
       map(([courses, students]) => {
         return {
