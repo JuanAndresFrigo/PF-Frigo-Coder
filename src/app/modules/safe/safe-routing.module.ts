@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { isNotStudentGuard } from 'src/app/guards/is-not-student.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
       // },
       {
         path: 'users', //main/users
+        canActivate: [isNotStudentGuard],
         loadChildren: () =>
           import('./components/users/users.module').then((m) => m.UsersModule),
       },

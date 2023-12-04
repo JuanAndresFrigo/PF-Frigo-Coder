@@ -5,18 +5,13 @@
 >
   <mat-drawer #drawer class="example-sidenav" mode="over">
     <mat-nav-list role="list">
+      <!-- role="listitem" -->
       <mat-list-item
-        role="listitem"
+        *ngIf="loggedUserRol !== 'STUDENT'"
         (click)="onNavItemClick('users')"
         [activated]="getModuleRoute === 'users'"
         >Usuarios</mat-list-item
       >
-      <!-- <mat-list-item
-        role="listitem"
-        (click)="onNavItemClick('students')"
-        [activated]="getModuleRoute === 'students'"
-        >Alumnos</mat-list-item
-      > -->
       <mat-list-item
         role="listitem"
         (click)="onNavItemClick('courses')"

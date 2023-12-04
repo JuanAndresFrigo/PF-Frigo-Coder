@@ -7,15 +7,17 @@ import { UserDialogComponent } from '../user-dialog/user-dialog.component';
 import { FullnamePipe } from 'src/app/pipes/fullname/fullname.pipe';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users-main.component.html',
   styleUrls: ['./users-main.component.scss'],
-  providers: [UserService, FullnamePipe],
+  providers: [UserService, FullnamePipe, AuthService],
 })
 export class UsersMainComponent {
   public userList$?: Observable<User[]>;
+  public loggedUserRol: string = '';
 
   public userColumns: string[] = [
     'id',
@@ -29,13 +31,22 @@ export class UsersMainComponent {
     private userService: UserService,
     private matDialog: MatDialog,
     private fullnamePipe: FullnamePipe,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
+    authService.authUser$
+      .pipe(take(1))
+      .subscribe((res: any) => (this.loggedUserRol = res.rol));
     this.getUsers();
   }
 
   private getUsers(): void {
-    this.userList$ = this.userService.getUsers().pipe(take(1));
+    console.log(this.loggedUserRol);
+
+    this.userList$ =
+      this.loggedUserRol === 'USER'
+        ? this.userService.getUsersStudents().pipe(take(1))
+        : this.userService.getUsers().pipe(take(1));
   }
 
   public openUsersDialog() {

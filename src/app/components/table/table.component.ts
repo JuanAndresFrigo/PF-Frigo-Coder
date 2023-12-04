@@ -1,14 +1,18 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { take } from 'rxjs';
 import { User } from 'src/app/interfaces/user.interface';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
+  providers: [AuthService]
 })
 export class TableComponent {
   public _dataSourceTable: User[] = [];
   public _displayedColumnsTable: string[] = [];
+  public loggedUserRol: string = '';
 
   @Input() public set dataSourceTable(listUser: User[] | null) {
     if (listUser) this._dataSourceTable = listUser;
@@ -28,5 +32,9 @@ export class TableComponent {
   @Output() public onEditClick = new EventEmitter<User>();
   @Output() public onDeleteClick = new EventEmitter<User>();
 
-  constructor() {}
+  constructor(private authService: AuthService) {
+    authService.authUser$
+      .pipe(take(1))
+      .subscribe((res: any) => (this.loggedUserRol = res.rol));
+  }
 }

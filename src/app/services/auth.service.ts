@@ -12,10 +12,6 @@ import { selectAuthUser } from '../store/auth/auth.selectors';
 @Injectable()
 export class AuthService {
   private _urlBase: string = environment.baseUrl;
-
-  // private _authUser$ = new BehaviorSubject<User | null>(null);
-
-  // public authUser$ = this._authUser$.asObservable();
   public authUser$ = this.store.select(selectAuthUser);
 
   constructor(

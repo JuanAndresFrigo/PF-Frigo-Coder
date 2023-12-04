@@ -34,10 +34,10 @@
       <button mat-icon-button color="accent" (click)="onInfoClick.emit(user)">
         <mat-icon>info</mat-icon>
       </button>
-      <button mat-icon-button color="primary" (click)="onEditClick.emit(user)">
+      <button *ngIf="loggedUserRol === 'ADMIN'" mat-icon-button color="primary" (click)="onEditClick.emit(user)">
         <mat-icon>edit</mat-icon>
       </button>
-      <button
+      <button *ngIf="loggedUserRol === 'ADMIN'"
         mat-icon-button
         color="warn"
         (click)="onDeleteClick.emit(user)"

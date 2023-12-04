@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { Observable, map, take } from 'rxjs';
+import { User } from 'src/app/interfaces/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -15,6 +17,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
+  public loggedUserRol: string = '';
+
   @ViewChild('drawer') drawer?: MatSidenav;
   showFiller = false;
 
@@ -25,6 +29,9 @@ export class SidenavComponent {
 
   constructor(private route: Router, private authService: AuthService) {
     this.getModuleRoute;
+    authService.authUser$
+      .pipe(take(1))
+      .subscribe((res: any) => (this.loggedUserRol = res.rol));
   }
 
   public onNavItemClick(item: string): void {

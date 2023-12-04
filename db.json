@@ -2,43 +2,43 @@
   "users": [
     {
       "id": 1,
-      "name": "admin",
-      "surname": "admin",
+      "name": "nom adm",
+      "surname": "ape adm",
       "docNumber": "11222333",
       "email": "admin@mail.com",
       "password": "1234",
-      "token": "cfvdzp",
+      "token": "oiyvseh",
       "rol": "ADMIN"
     },
     {
-      "name": "student DB",
-      "surname": "surnameAdmin",
+      "id": 2,
+      "name": "nom stu",
+      "surname": "ape stu",
+      "docNumber": "12345678",
       "email": "student@mail.com",
       "password": "1234",
-      "docNumber": "12345678",
-      "token": "asdfñlkj",
-      "rol": "STUDENT",
-      "id": 2
+      "token": "3d7jbbh",
+      "rol": "STUDENT"
     },
     {
-      "name": "Juan",
-      "surname": "Frigo",
+      "id": 3,
+      "name": "nom user",
+      "surname": "ape user",
       "docNumber": "37123123",
       "email": "user@mail.com",
       "password": "1234",
-      "token": "ahipob",
-      "rol": "USER",
-      "id": 3
+      "token": "9bl34u",
+      "rol": "USER"
     },
     {
-      "name": "student 4",
-      "surname": "stu4",
+      "id": 4,
+      "name": "stude",
+      "surname": "stu",
+      "docNumber": "12345678",
       "email": "student4@mail.com",
       "password": "1234",
-      "docNumber": "12345678",
-      "token": "asdfñlkj",
-      "rol": "STUDENT",
-      "id": 4
+      "token": "q1bcdy",
+      "rol": "STUDENT"
     }
   ],
   "courses": [
