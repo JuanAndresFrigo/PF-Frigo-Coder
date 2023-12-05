@@ -22,10 +22,10 @@
       <button mat-icon-button color="accent" (click)="onInfoClick.emit(course)">
         <mat-icon>info</mat-icon>
       </button>
-      <button mat-icon-button color="primary" (click)="onEditClick.emit(course)">
+      <button *ngIf="loggedUserRol === 'ADMIN'" mat-icon-button color="primary" (click)="onEditClick.emit(course)">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" (click)="onDeleteClick.emit(course)">
+      <button *ngIf="loggedUserRol === 'ADMIN'" mat-icon-button color="warn" (click)="onDeleteClick.emit(course)">
         <mat-icon>delete</mat-icon>
       </button>
     </td>

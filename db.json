@@ -105,51 +105,16 @@
     {
       "id": 1,
       "courseId": 1,
-      "userId": 1
+      "userId": 2
     },
     {
       "id": 2,
-      "courseId": 2,
-      "userId": 1
+      "courseId": 1,
+      "userId": 4
     },
     {
       "id": 3,
       "courseId": 2,
-      "userId": 2
-    },
-    {
-      "courseId": 1,
-      "userId": 4,
-      "id": 4
-    },
-    {
-      "courseId": 2,
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "courseId": 1,
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "id": 8,
-      "courseId": 2,
-      "userId": 4
-    },
-    {
-      "courseId": 2,
-      "userId": 2,
-      "id": 9
-    },
-    {
-      "id": 10,
-      "courseId": 1,
-      "userId": 4
-    },
-    {
-      "id": 11,
-      "courseId": 1,
       "userId": 4
     }
   ]

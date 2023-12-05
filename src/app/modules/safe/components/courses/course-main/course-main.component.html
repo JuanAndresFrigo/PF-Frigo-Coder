@@ -3,13 +3,14 @@
 
   <div class="mb-3">
     <app-button
+    *ngIf="loggedUser?.rol === 'ADMIN'"
       (onButtonClick)="openCoursesDialog()"
       buttonContent="Nuevo Curso"
       buttonIcon="add"
     ></app-button>
   </div>
   <app-table-course
-    [dataSourceTable]="courseList"
+    [dataSourceTable]="getCourseList"
     [displayedColumnsTable]="courseColumns"
     (onInfoClick)="onInfoCourseClick($event)"
     (onEditClick)="onEditCourseClick($event)"
