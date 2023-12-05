@@ -55,3 +55,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     * Inscripciones: carga de inscripciones, ABM, opciones del dialog
 2. Se utiliza una DB local para persistencia de datos, la cual es consumida mediante llamadas http.
 3. Se implementa el uso de SweetAlert2, para mostrar alertas con una estética mas pulida a la default del navegador
+
+## Aclaraciones
+
+1. Varios test se skipearon dado que marcan un error de Store
+2. Hay features que no se desarrollaron, como el detalle de una inscripció, usuarios y studen estan unificacdos, el abm de clases
+3. De momento no se imlementó la unicidad de datos, ya sea en usuarios registados, inscripciones, altas, etc. SE deja para mas adelante

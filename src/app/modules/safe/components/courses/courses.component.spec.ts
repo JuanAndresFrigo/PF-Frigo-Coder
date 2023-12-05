@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormErrorsModule } from 'src/app/pipes/form-errors/form-errors.module';
 import { CourseService } from '../../services/course.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;
@@ -27,6 +28,7 @@ describe('CoursesComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         FormErrorsModule,
+        RouterTestingModule
       ],
     });
     fixture = TestBed.createComponent(CoursesComponent);

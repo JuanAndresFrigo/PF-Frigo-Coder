@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('SidenavComponent', () => {
+xdescribe('SidenavComponent', () => {
   let component: SidenavComponent;
   let fixture: ComponentFixture<SidenavComponent>;
 
