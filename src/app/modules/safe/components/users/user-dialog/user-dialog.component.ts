@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { User, UserRole } from 'src/app/interfaces/user.interface';
+import { User } from 'src/app/interfaces/user.interface';
 import { onlyNumbersValidator } from 'src/app/utils/only-number-validator';
 
 @Component({

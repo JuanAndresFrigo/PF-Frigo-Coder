@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { EnrrollmentsService } from '../../../services/enrrollments.service';
 import { User } from 'src/app/interfaces/user.interface';
 import { Enrrollment } from 'src/app/interfaces/enrrollment.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-course-main',
@@ -77,7 +78,13 @@ export class CourseMainComponent {
               take(1),
               tap(() => this.getCourses())
             )
-            .subscribe();
+            .subscribe(() => {
+              Swal.fire({
+                title: 'Éxito!',
+                text: 'Curso creado correctamente',
+                icon: 'success',
+              });
+            });
         },
       });
   }
@@ -110,26 +117,55 @@ export class CourseMainComponent {
               take(1),
               tap(() => this.getCourses())
             )
-            .subscribe();
+            .subscribe(() => {
+              Swal.fire({
+                title: 'Éxito!',
+                text: 'El curso se editó correctamente',
+                icon: 'success',
+              });
+            });
         },
       });
   }
 
   public onDeleteCourseClick(courseToDelete: Course) {
-    const message: string = `¿Esta seguro que quiere borrar el curso: ${courseToDelete.name}?`;
+    const message: string = `Vas a eliminar el curso: ${courseToDelete.name}?`;
 
-    if (confirm(message)) {
-      this.courseList = this.courseList.filter(
-        (c) => c.id !== courseToDelete.id
-      );
-
-      this.courseService
-        .deleteCourse(courseToDelete)
-        .pipe(
-          take(1),
-          tap(() => this.getCourses())
-        )
-        .subscribe();
-    }
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: message,
+      icon: 'warning',
+      showCancelButton: true,
+      reverseButtons: true,
+      confirmButtonColor: '#673ab7',
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // alerta
+        Swal.fire({
+          title: 'Eliminado!',
+          text: 'El curso se removió con éxito',
+          icon: 'success',
+        });
+        this.courseList = this.courseList.filter(
+          (c) => c.id !== courseToDelete.id
+        );
+        // acción
+        this.courseService
+          .deleteCourse(courseToDelete)
+          .pipe(
+            take(1),
+            tap(() => this.getCourses())
+          )
+          .subscribe();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({
+          title: 'Cancelado',
+          text: 'No se realizó ningún cambio',
+          icon: 'error',
+        });
+      }
+    });
   }
 }

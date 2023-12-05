@@ -12,6 +12,7 @@ import {
   selectStudentOptions,
 } from '../store/enrrollments.selectors';
 import { Enrrollment } from 'src/app/interfaces/enrrollment.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-enrrollment-dialog',
@@ -72,6 +73,13 @@ export class EnrrollmentDialogComponent {
   }
 
   public onSaveClick(): void {
+    Swal.fire({
+      title: 'Éxito!',
+      text: 'La inscripción se editó correctamente',
+      icon: 'success',
+      confirmButtonColor: '#673ab7',
+    });
+
     this.store.dispatch(
       EnrrollmentsActions.createEnrollment({
         payload: this.enrrollmentForm.getRawValue(),
@@ -80,6 +88,7 @@ export class EnrrollmentDialogComponent {
   }
 
   public onEditClick(): void {
+
     this.store.dispatch(
       EnrrollmentsActions.editEnrollment({
         payload: this.enrrollmentForm.getRawValue(),

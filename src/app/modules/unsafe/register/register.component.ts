@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { User, UserRole } from 'src/app/interfaces/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { onlyNumbersValidator } from 'src/app/utils/only-number-validator';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -71,14 +72,22 @@ export class RegisterComponent {
       this.authService.registerUser(userToRegister).subscribe({
         next: (response) => {
           if (!response) {
-            alert('Ocurrió un error');
+            Swal.fire({
+              title: 'Error',
+              text: 'Ocurrió un error',
+              icon: 'error',
+            });
             return;
           }
           this.setLocalStorage(response);
           this.router.navigate(['/safe']);
         },
         error: (err) => {
-          alert('Error de conexion');
+          Swal.fire({
+            title: 'Error',
+            text: 'Error de conexion',
+            icon: 'error',
+          });
         },
       });
     }

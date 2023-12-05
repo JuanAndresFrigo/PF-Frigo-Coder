@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/interfaces/user.interface';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -32,14 +33,22 @@ export class LoginComponent {
       this.authService.login(this.loginForm.getRawValue()).subscribe({
         next: (response) => {
           if (!response.length) {
-            alert('Usuario o contrasena invalidos');
+            Swal.fire({
+              title: 'Error',
+              text: 'Usuario o contrasena invalidos',
+              icon: 'error',
+            });
             return;
           }
           this.setLocalStorage(response);
           this.router.navigate(['/safe']);
         },
         error: (err) => {
-          alert('Error de conexion');
+          Swal.fire({
+            title: 'Error',
+            text: 'Error de conexión',
+            icon: 'error',
+          });
         },
       });
     }

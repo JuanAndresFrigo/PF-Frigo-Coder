@@ -54,8 +54,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     * Usuario logueado
     * Inscripciones: carga de inscripciones, ABM, opciones del dialog
 2. Se utiliza una DB local para persistencia de datos, la cual es consumida mediante llamadas http.
-
-## TODOs
-
-    [] alertas
-    [] datos únicos
+3. Se implementa el uso de SweetAlert2, para mostrar alertas con una estética mas pulida a la default del navegador

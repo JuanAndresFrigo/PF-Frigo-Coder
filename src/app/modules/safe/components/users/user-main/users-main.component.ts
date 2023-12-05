@@ -8,6 +8,7 @@ import { FullnamePipe } from 'src/app/pipes/fullname/fullname.pipe';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-users',
@@ -72,7 +73,14 @@ export class UsersMainComponent {
               take(1),
               tap(() => this.getUsers())
             )
-            .subscribe();
+            .subscribe(() => {
+              Swal.fire({
+                title: 'Éxito!',
+                text: 'Usuario creado correctamente',
+                icon: 'success',
+                confirmButtonColor: '#673ab7',
+              });
+            });
         },
       });
   }
@@ -110,24 +118,55 @@ export class UsersMainComponent {
               take(1),
               tap(() => this.getUsers())
             )
-            .subscribe();
+            .subscribe(() => {
+              Swal.fire({
+                title: 'Éxito!',
+                text: 'El usuario se editó correctamente',
+                icon: 'success',
+                confirmButtonColor: '#673ab7',
+              });
+            });
         },
       });
   }
 
   public onDeleteUserClick(userToDelete: User): void {
     const userFullname: string = this.fullnamePipe.transform(userToDelete);
-    const message: string = `¿Esta seguro que quiere borrar a ${userFullname}?`;
+    const message: string = `Vas a eliminar al usuario: ${userFullname}`;
 
-    if (confirm(message)) {
-      this.userService
-        .deleteUser(userToDelete)
-        .pipe(
-          take(1),
-          tap(() => this.getUsers())
-        )
-        .subscribe();
-    }
+    Swal.fire({
+      title: 'Estas seguro?',
+      text: message,
+      icon: 'warning',
+      showCancelButton: true,
+      reverseButtons: true,
+      confirmButtonColor: '#673ab7',
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // alerta
+        Swal.fire({
+          title: 'Eliminado!',
+          text: 'El usuario se removió con éxito',
+          icon: 'success',
+        });
+        //accion
+        this.userService
+          .deleteUser(userToDelete)
+          .pipe(
+            take(1),
+            tap(() => this.getUsers())
+          )
+          .subscribe();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({
+          title: 'Cancelado',
+          text: 'No se realizó ningún cambio',
+          icon: 'error',
+        });
+      }
+    });
   }
 
   private genetareRandomString(): string {
