@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "adm1",
-      "surname": "apellido",
+      "name": "Administrador",
+      "surname": "Perez",
       "docNumber": "11222334",
       "email": "admin@mail.com",
       "password": "1234",
@@ -11,115 +11,143 @@
       "rol": "ADMIN"
     },
     {
-      "id": 2,
-      "name": "student1",
-      "surname": "apellido",
-      "docNumber": "12345678",
-      "email": "student@mail.com",
-      "password": "1234",
-      "token": "o0gkv2i",
-      "rol": "STUDENT"
-    },
-    {
-      "id": 3,
-      "name": "user1",
-      "surname": "apell",
-      "docNumber": "37123123",
+      "name": "Juan",
+      "surname": "Frigo",
+      "docNumber": "37000000",
       "email": "user@mail.com",
       "password": "1234",
-      "token": "x5bstv",
-      "rol": "USER"
+      "token": "fqbify",
+      "rol": "USER",
+      "id": 2
     },
     {
-      "id": 4,
-      "name": "student2",
-      "surname": "apellidooo",
-      "docNumber": "12345678",
-      "email": "student4@mail.com",
+      "name": "Juan Andres",
+      "surname": "Frigo",
+      "docNumber": "37123123",
+      "email": "student@mail.com",
       "password": "1234",
-      "token": "jpuebi",
-      "rol": "STUDENT"
+      "token": "n3ifn7l",
+      "rol": "STUDENT",
+      "id": 3
+    },
+    {
+      "name": "Estudiante",
+      "surname": "Sosa",
+      "docNumber": "11222333",
+      "email": "student2@mail.com",
+      "password": "1234",
+      "token": "epmz1gf",
+      "rol": "STUDENT",
+      "id": 4
+    },
+    {
+      "name": "Sofía",
+      "surname": "Flores",
+      "docNumber": "12333333",
+      "email": "sofia@mail.com",
+      "password": "1234",
+      "token": "52i34c",
+      "rol": "STUDENT",
+      "id": 5
     }
   ],
   "courses": [
     {
       "id": 1,
-      "name": "curso1 DB original",
+      "name": "Curso de prueba 1",
       "classes": [
         {
           "id": 1,
-          "name": "clase1"
+          "name": "Clase de introducción"
         },
         {
-          "id": 3,
-          "name": "clase3"
-        },
-        {
-          "id": 2,
-          "name": "clase2"
-        },
-        {
-          "id": 4,
-          "name": "clase4"
+          "id": 5,
+          "name": "Cierre de curso"
         }
       ]
     },
     {
       "id": 2,
-      "name": "curso2 DB",
+      "name": "Angular Coder",
       "classes": [
         {
           "id": 1,
-          "name": "clase1"
+          "name": "Clase de introducción"
+        },
+        {
+          "id": 4,
+          "name": "Clase de temas específicos"
+        },
+        {
+          "id": 5,
+          "name": "Cierre de curso"
+        }
+      ]
+    },
+    {
+      "name": "Angular advance para expertos",
+      "classes": [
+        {
+          "id": 4,
+          "name": "Clase de temas específicos"
         },
         {
           "id": 3,
-          "name": "clase3"
+          "name": "Clase entrando en profundidad"
+        },
+        {
+          "id": 1,
+          "name": "Clase de introducción"
+        },
+        {
+          "id": 5,
+          "name": "Cierre de curso"
         }
-      ]
+      ],
+      "id": 3
     }
   ],
   "classes": [
     {
       "id": 1,
-      "name": "clase1"
+      "name": "Clase de introducción"
     },
     {
       "id": 2,
-      "name": "clase2"
+      "name": "Clase conceptos básicos"
     },
     {
       "id": 3,
-      "name": "clase3"
+      "name": "Clase entrando en profundidad"
     },
     {
       "id": 4,
-      "name": "clase4"
+      "name": "Clase de temas específicos"
     },
     {
       "id": 5,
-      "name": "clase5"
+      "name": "Cierre de curso"
     }
   ],
   "enrrollments": [
     {
       "id": 1,
       "courseId": 1,
-      "userId": 2
+      "userId": 3
     },
     {
       "id": 2,
-      "courseId": 1,
-      "userId": 4
+      "courseId": 2,
+      "userId": 3
     },
     {
       "id": 3,
-      "courseId": 2,
+      "courseId": 3,
       "userId": 4
     },
     {
       "id": 4,
-      "courseId": 1,
+      "courseId": 2,
       "userId": 4
     }
   ]

@@ -37,7 +37,7 @@ export class UsersMainComponent {
   ) {
     authService.authUser$
       .pipe(take(1))
-      .subscribe((res: any) => (this.loggedUserRol = res.rol));
+      .subscribe((res: any) => (this.loggedUserRol = res?.rol));
     this.getUsers();
   }
 

@@ -41,7 +41,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     * Esta página, permite a un usuario de la app gestionar los cursos
         * El usuario de rol ADMIN, puede ver el listado completo, generar un nuevo curso con al menos una clase, editar un curso, borrarlo e ingresar a su detalle.
         * El usuario de rol USER, puede ver el listado completo e ingresar a su detalle.
-        * El usuario de rol STUDENT, puede ver el listado s´lo de los cursos en los que está inscripto, e ingresar a su detalle.
+        * El usuario de rol STUDENT, puede ver el listado sólo de los cursos en los que está inscripto, e ingresar a su detalle.
 5. Inscripciones
     * Esta página, permite a un usuario de la app gestionar las incripciones a los cursos
         * El usuario de rol ADMIN, puede ver el listado completo, generar una nueva inscripción, editarla o borrarla
