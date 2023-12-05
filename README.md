@@ -48,6 +48,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
         * El usuario de rol USER, puede ver el listado completo, generar una nueva inscripción, editarla o borrarla
         * El usuario de rol STUDENT, no puede ver esta página
 
+## EXTRA
+
+1. Se implementa rxjs store, para el manejo de estados en las inscripciones y en la autenticación.
+    * Usuario logueado
+    * Inscripciones: carga de inscripciones, ABM, opciones del dialog
+2. Se utiliza una DB local para persistencia de datos, la cual es consumida mediante llamadas http.
+
 ## TODOs
 
     [] alertas
