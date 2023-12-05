@@ -33,10 +33,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     * EL usuario de rol "USER" verá en el sidebar las opciones de -Usuarios (sólo estudiantes), -Cursos, -Inscrpciones
     * EL usuario de rol "STUDENT" verá en el sidebar sólo la opción de -Inscrpciones
 3. Usuarios
-    * Esta página, permite a un usuario gestionar a los usuarios
-        * El usuariode rol ADMIN, puede ver el listado, generar un nuevo usuario con cualquier rol, editar un usuario, borrarlo, ingresar a su detalle.
-        * El usuariode rol USER, puede ver el listado, pero únicamente de quienes tengan el rol STUDENT; e ingresar a su detalle.
-        * El usuariode rol STUDENT, no puede ver esta página
+    * Esta página, permite a un usuario de la app gestionar a los usuarios
+        * El usuario de rol ADMIN, puede ver el listado completo, generar un nuevo usuario con cualquier rol, editar un usuario, borrarlo, ingresar a su detalle.
+        * El usuario de rol USER, puede ver el listado, pero únicamente de quienes tengan el rol STUDENT; e ingresar a su detalle.
+        * El usuario de rol STUDENT, no puede ver esta página
+4. Cursos
+    * Esta página, permite a un usuario de la app gestionar los cursos
+        * El usuario de rol ADMIN, puede ver el listado, generar un nuevo usuario con cualquier rol, editar un usuario, borrarlo, ingresar a su detalle.
+        * El usuario de rol USER, puede ver el listado, pero únicamente de quienes tengan el rol STUDENT; e ingresar a su detalle.
+        * El usuario de rol STUDENT, no puede ver esta página
 
 ## TODOs
 

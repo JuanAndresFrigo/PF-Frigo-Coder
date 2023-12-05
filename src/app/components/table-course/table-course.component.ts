@@ -26,6 +26,7 @@ export class TableCourseComponent {
     return this._displayedColumnsTable;
   }
 
+  @Output() public onInfoClick = new EventEmitter<Course>();
   @Output() public onEditClick = new EventEmitter<Course>();
   @Output() public onDeleteClick = new EventEmitter<Course>();
 }

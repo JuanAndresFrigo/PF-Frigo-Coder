@@ -18,7 +18,6 @@ export class UserDetailComponent {
   public user?: User;
   public userForm!: FormGroup;
   public courses?: Course[];
-  public panelOpenState = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,

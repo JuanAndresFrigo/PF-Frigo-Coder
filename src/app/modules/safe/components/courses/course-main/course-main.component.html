@@ -1,0 +1,18 @@
+<div class="container pt-3">
+  <h1>Cursos</h1>
+
+  <div class="mb-3">
+    <app-button
+      (onButtonClick)="openCoursesDialog()"
+      buttonContent="Nuevo Curso"
+      buttonIcon="add"
+    ></app-button>
+  </div>
+  <app-table-course
+    [dataSourceTable]="courseList"
+    [displayedColumnsTable]="courseColumns"
+    (onInfoClick)="onInfoCourseClick($event)"
+    (onEditClick)="onEditCourseClick($event)"
+    (onDeleteClick)="onDeleteCourseClick($event)"
+  ></app-table-course>
+</div>

@@ -1,10 +1,10 @@
 export interface Course {
-  id: number;
+  id?: number;
   name: string;
-  classes: CourseClas[];
+  classes?: CourseClass[];
 }
 
-export interface CourseClas {
+export interface CourseClass {
   id: number;
   name: string;
 }

@@ -2,61 +2,65 @@
   "users": [
     {
       "id": 1,
-      "name": "nom adm",
-      "surname": "ape adm",
+      "name": "adm1",
+      "surname": "apellido",
       "docNumber": "11222333",
       "email": "admin@mail.com",
       "password": "1234",
-      "token": "oiyvseh",
+      "token": "n44w74",
       "rol": "ADMIN"
     },
     {
       "id": 2,
-      "name": "nom stu",
-      "surname": "ape stu",
+      "name": "student1",
+      "surname": "apellido",
       "docNumber": "12345678",
       "email": "student@mail.com",
       "password": "1234",
-      "token": "3d7jbbh",
+      "token": "o0gkv2i",
       "rol": "STUDENT"
     },
     {
       "id": 3,
-      "name": "nom user",
-      "surname": "ape user",
+      "name": "user1",
+      "surname": "apell",
       "docNumber": "37123123",
       "email": "user@mail.com",
       "password": "1234",
-      "token": "9bl34u",
+      "token": "x5bstv",
       "rol": "USER"
     },
     {
       "id": 4,
-      "name": "stude",
-      "surname": "stu",
+      "name": "student2",
+      "surname": "apellidooo",
       "docNumber": "12345678",
       "email": "student4@mail.com",
       "password": "1234",
-      "token": "q1bcdy",
+      "token": "jpuebi",
       "rol": "STUDENT"
     }
   ],
   "courses": [
     {
       "id": 1,
-      "name": "curso1 DB",
+      "name": "curso1 DB original",
       "classes": [
         {
-          "id": "1",
+          "id": 1,
           "name": "clase1"
         },
         {
-          "id": "2",
+          "id": 3,
+          "name": "clase3"
+        },
+        {
+          "id": 2,
           "name": "clase2"
         },
         {
-          "id": "3",
-          "name": "clase3"
+          "id": 4,
+          "name": "clase4"
         }
       ]
     },
@@ -65,18 +69,36 @@
       "name": "curso2 DB",
       "classes": [
         {
-          "id": "1",
+          "id": 1,
           "name": "clase1"
         },
         {
-          "id": "2",
-          "name": "clase2"
-        },
-        {
-          "id": "3",
+          "id": 3,
           "name": "clase3"
         }
       ]
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "name": "clase1"
+    },
+    {
+      "id": 2,
+      "name": "clase2"
+    },
+    {
+      "id": 3,
+      "name": "clase3"
+    },
+    {
+      "id": 4,
+      "name": "clase4"
+    },
+    {
+      "id": 5,
+      "name": "clase5"
     }
   ],
   "enrrollments": [

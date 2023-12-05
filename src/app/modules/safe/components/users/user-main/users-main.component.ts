@@ -41,8 +41,6 @@ export class UsersMainComponent {
   }
 
   private getUsers(): void {
-    console.log(this.loggedUserRol);
-
     this.userList$ =
       this.loggedUserRol === 'USER'
         ? this.userService.getUsersStudents().pipe(take(1))

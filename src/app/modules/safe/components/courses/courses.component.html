@@ -1,19 +1,2 @@
-<div class="container pt-3">
-  <h1>Cursos</h1>
 
-  <div class="mb-3">
-    <app-button
-      (onButtonClick)="openCoursesDialog()"
-      buttonContent="Nuevo Curso"
-      buttonIcon="add"
-    ></app-button>
-  </div>
-  <app-table-course
-    [dataSourceTable]="courseList"
-    [displayedColumnsTable]="courseColumns"
-    (onEditClick)="onEditCourseClick($event)"
-    (onDeleteClick)="onDeleteCourseClick($event)"
-  ></app-table-course>
-
-  <h4 class="mt-5">Se agregará data referente a los cursos y alumnos</h4>
-</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,31 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-6">
+      <h1>Detalle del curso</h1>
+      <app-generic-card>
+        <form [formGroup]="courseForm">
+          <mat-form-field class="w-100">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput readonly="true" />
+          </mat-form-field>
+        </form>
+        <app-button
+        (onButtonClick)="onGoBack()"
+        buttonColor="accent"
+        buttonContent="Volver"
+      ></app-button>
+      </app-generic-card>
+    </div>
+    <div class="col-6">
+      <h1>Clases del curso</h1>
+      <app-generic-card>
+        <mat-list>
+          <mat-list-item *ngFor="let class of courseToDetail?.classes">
+            <div matListItemTitle class="class-title"> Clase:</div>
+            <span matListItemLine class="class-item">{{ class.name }}</span>
+          </mat-list-item>
+        </mat-list>
+      </app-generic-card>
+    </div>
+  </div>
+</div>

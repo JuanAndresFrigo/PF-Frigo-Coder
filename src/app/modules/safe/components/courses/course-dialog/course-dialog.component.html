@@ -12,6 +12,15 @@
       </mat-error>
     </mat-form-field>
   </form>
+  <mat-selection-list #classItems>
+    <mat-list-option
+      *ngFor="let classItem of classeslist | async"
+      [value]="classItem"
+      (selectedChange)="testeo(classItems.selectedOptions)"
+    >
+      {{ classItem.name }}
+    </mat-list-option>
+  </mat-selection-list>
 </div>
 
 <div mat-dialog-actions>

@@ -28,7 +28,6 @@ describe('CoursesComponent', () => {
         MatInputModule,
         FormErrorsModule,
       ],
-      providers:[CourseService]
     });
     fixture = TestBed.createComponent(CoursesComponent);
     component = fixture.componentInstance;
