@@ -20,6 +20,7 @@
       >
       <mat-list-item
         role="listitem"
+        *ngIf="loggedUserRol !== 'STUDENT'"
         (click)="onNavItemClick('enrrollments')"
         [activated]="getModuleRoute === 'enrrollments'"
         >Inscripciones</mat-list-item

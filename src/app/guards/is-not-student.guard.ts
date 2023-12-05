@@ -9,7 +9,7 @@ export const isNotStudentGuard: CanActivateFn = (route, state) => {
 
   return authService.authUser$.pipe(
     map((user) =>
-      user?.rol !== 'STUDENT' ? true : router.createUrlTree(['/safe/enrrollments'])
+      user?.rol !== 'STUDENT' ? true : router.createUrlTree(['/safe/courses'])
     )
   );
 };

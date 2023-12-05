@@ -28,6 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'enrrollments', //main/enrrollments
+        canActivate: [isNotStudentGuard],
         loadChildren: () =>
           import('./components/enrrollments/enrrollments.module').then(
             (m) => m.EnrrollmentsModule

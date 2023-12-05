@@ -50,10 +50,9 @@ export class AuthService {
   }
 
   public logout(): void {
-
     this.store.dispatch(AuthActions.resetState());
     localStorage.removeItem('token');
-    this.router.navigate(['/unsafe']);
+    this.router.navigate(['/unsafe'])
   }
 
   public registerUser(userToRegister: User): Observable<User> {
